@@ -24,7 +24,7 @@ pkg update -y && pkg install proot curl unzip -y
 
 # 2. 下载并解压 Release 二进制文件
 cd ~
-curl -L -o reasonix.zip [https://github.com/zzgs219G/reasonix-termux/releases/download/v1/reasonix.zip](https://github.com/zzgs219G/reasonix-termux/releases/download/v1/reasonix.zip)
+curl -L -o reasonix.zip https://github.com/zzgs219G/reasonix-termux/releases/download/v1/reasonix.zip
 unzip -o reasonix.zip
 chmod +x reasonix
 mv reasonix $PREFIX/bin/
@@ -33,8 +33,6 @@ mkdir -p ~/tmp
 
 # 3. 写入 alias 别名
 cat << 'EOF' >> ~/.bashrc
-
-# Reasonix PROOT Wrapper
 alias reasonix="proot -b ~/tmp:/tmp -b /storage/emulated/0:/storage/emulated/0 reasonix"
 EOF
 
